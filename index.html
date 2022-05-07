@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script type="module">
+        import firebase from "firebase/app";
+        import "firebase/firestore";
+        const firebaseConfig = {
+            apiKey: "AIzaSyDmrSBW3LoDHg33Gd3dT7r2fOACcgRaDPU",
+            authDomain: "todo-f75c4.firebaseapp.com",
+            projectId: "todo-f75c4",
+            storageBucket: "todo-f75c4.appspot.com",
+            messagingSenderId: "1002740981148",
+            appId: "1:1002740981148:web:cfb55d9fbd31e8668e3c59",
+            measurementId: "G-TJP3K1GQTQ"
+        };
+        var app = initializeApp(firebaseConfig);
+        var analytics = getAnalytics(app);
+        var db = firebase.firestore();
+    </script>
+    <script src="./script.js"></script>
+
+</head>
+<body>
+    <div class="background-image">
+        <img src="./assets/bg-desktop-dark.jpg">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                Todo
+            </div>
+            <div class="theme">
+                <img src="./assets/icon-sun.svg">
+            </div>
+        </div>
+        <div class="new-todo">
+            <div class="check">
+                <div class="check-mark">
+
+                </div>
+            </div>
+            <div class="new-todo-input">
+                <form onsubmit="addItem(event)">
+                    <input id="todo-input" type="text" placeholder="Type a Message...">
+
+                </form>
+            </div>
+        </div>
+        <div class="todo-items-wrapper">
+            <div class="todo-items">
+                <div class="todo-item">
+                    <div class="check">
+                        <div  class="check-mark">
+                            <img src="./assets/icon-check.svg">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the shit
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div  class="check-mark">
+                            <img src="./assets/icon-check.svg">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the shit
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div  class="check-mark">
+                            <img src="./assets/icon-check.svg">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the shit
+                    </div>
+                </div>
+            </div>
+            <div class="todo-items-info">
+                <div class="items-left">
+                    5 items left
+                </div>
+                <div class="items-statuses">
+                    <span class="active">All</span>
+                    <span>Active></span>
+                    <span>Completed</span>
+                </div>
+                <div class="items-clear">
+                    <span>Clear Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
